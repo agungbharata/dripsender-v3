@@ -7,17 +7,34 @@ import Logo from "../../public/assets/images/logomark.svg"
 <section class="w-full bg-slate-50 dark:bg-slate-900 py-6 lg:px-0 px-4 sticky top-0 z-50 border-b-2 border-gray-100 dark:border-gray-800">
   <header class="lg:flex justify-between gap-5 mx-auto max-w-7xl">
     <Astronav closeOnClick>
-      <div class="flex w-full lg:w-auto justify-between">
+      <div class="flex w-full lg:w-auto justify-between">    
+        <a
+        title="Open Menu"
+        aria-label="Open Menu"
+        href="#sidenav-open"
+        class="lg:hidden"
+    >
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="w-6 h-6"
+        >
+        <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 21L3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5" />
+        </svg>
+    </a>
         <a class="block text-teal-600" href="/">
           <span class="sr-only">Home</span>
           <img src={Logo.src} width="40px" height="auto" alt="Logo Dripsender" />
         </a>
         <div class="block lg:hidden">
-          <MenuIcon class="w-4 h-4 text-gray-800 dark:text-zinc-100" />
+          <MenuIcon class="w-5 h-5 text-gray-800 dark:text-zinc-100" />
         </div>
       </div>
-      <MenuItems class="items-center hidden lg:flex text-gray-800 dark:text-zinc-200">
-         <ul class="flex flex-col lg:flex-row lg:gap-5 pt-4 lg:pt-0 text-center divide-y lg:divide-y-0 divide-gray-200 dark:divide-slate-700 inset-y-0">
+      <MenuItems class="items-center hidden lg:flex text-gray-800 dark:text-zinc-200 text-md">
+        <ul class="flex flex-col lg:flex-row lg:gap-5 pt-4 lg:pt-0 text-center divide-y lg:divide-y-0 divide-gray-200 dark:divide-slate-700 inset-y-0">
           <li class="py-2"><a href="/">Home</a></li>
           <li class="py-2"><a href="/about">About</a></li>
           <li class="py-2"><a href="/pricing">Pricing</a></li>
@@ -29,3 +46,4 @@ import Logo from "../../public/assets/images/logomark.svg"
     </Astronav>
   </header>
 </section>
+
