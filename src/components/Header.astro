@@ -1,7 +1,7 @@
 ---
 import Toggle from "../ui/ThemeChange.astro";
 import { Astronav, MenuItems, MenuIcon, Dropdown, DropdownItems, DropdownSubmenu } from "astro-navbar";
-import Logo from "../../public/assets/images/logomark.svg"
+import Logo from "../../public/assets/images/logomark.svg";
 ---
 
 <section class="w-full bg-slate-50 dark:bg-slate-900 py-6 lg:px-0 px-4 sticky top-0 z-50 border-b-2 border-gray-100 dark:border-gray-800">
@@ -12,20 +12,39 @@ import Logo from "../../public/assets/images/logomark.svg"
           <span class="sr-only">Home</span>
           <img src={Logo.src} width="40px" height="auto" alt="Logo Dripsender" />
         </a>
-        <div class="block lg:hidden">
-          <MenuIcon class="w-4 h-4 text-gray-800 dark:text-zinc-100" />
+        <div class="flex gap-2 lg:hidden">
+          <MenuIcon class="w-6 h-6 text-gray-800 dark:text-zinc-100" />
         </div>
       </div>
       <MenuItems class="items-center hidden lg:flex text-gray-800 dark:text-zinc-200">
-         <ul class="flex flex-col lg:flex-row lg:gap-5 pt-4 lg:pt-0 text-center divide-y lg:divide-y-0 divide-gray-200 dark:divide-slate-700 inset-y-0">
+        <ul
+          class="flex flex-col lg:flex-row lg:gap-5 pt-4 lg:pt-0 text-center divide-y lg:divide-y-0 divide-gray-200 dark:divide-slate-700 inset-y-0"
+        >
           <li class="py-2"><a href="/">Home</a></li>
           <li class="py-2"><a href="/about">About</a></li>
           <li class="py-2"><a href="/pricing">Pricing</a></li>
           <li class="py-2"><a href="/docs/introduction">Documentation</a></li>
           <li class="py-2"><a href="/contact">Contact</a></li>
+          <li class="py-2"></li><a
+            href="/"
+            class="flex lg:hidden mb-2 items-center justify-center px-4 py-2 border border-transparent text-base font-base rounded-md text-white bg-cyan-500 hover:bg-cyan-600"
+          >
+            Login App</a
+          >
+          <div class="gap-2 lg:flex flex mx-auto p-2 rounded-full bg-cyan-300 items-center "><Toggle /></div>
+
         </ul>
       </MenuItems>
-      <div class="hidden lg:flex"><Toggle /></div>
     </Astronav>
+    <div class="gap-2 lg:flex hidden">
+      
+
+      <a
+        href="/"
+        class="flex items-center justify-center px-4 py-2 border border-transparent text-base font-base rounded-md text-white bg-cyan-500 hover:bg-cyan-600"
+      >
+        Login App</a
+      >
+    </div>
   </header>
 </section>

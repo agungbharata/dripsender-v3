@@ -1,23 +1,16 @@
 ---
-import { Image, Picture } from '@astrojs/image/components';
-import heroImage from '../assets/img/logomark.svg';
-
-
+import { Image, Picture } from "@astrojs/image/components";
+import heroImage from "../assets/img/logomark.svg";
 ---
 
 <section class="bg-slate-50 dark:bg-slate-900 lg:p-0 px-4 md:py-4 lg:py-0">
   <div class="lg:grid lg:grid-cols-12 lg:gap-8 max-w-7xl mx-auto py-16 lg:py-24 items-center">
-    <div class="absolute w-full lg:w-1/2 inset-y-0 lg:right-0">
-      <span class="absolute right-4 bottom-12 w-24 h-24 rounded-3xl bg-cyan-300 blur-xl opacity-80"></span>
-    </div>
-   
     <div class="sm:text-center md:max-w-2xl md:mx-auto lg:col-span-6 lg:text-left">
       <h1>
-        <span class="mt-1 block text-4xl lg:text-5xl tracking-tighter  font-extrabold text-center lg:text-left">
-          <span class="inline text-gray-900 dark:text-zinc-50 leading-tight">Cara Mudah dan Cepat</span>
-          <span class="inline text-cyan-600 dark:text-cyan-400 leading-tight">Mengubah Database WA</span>
-          <span class="inline text-gray-900 dark:text-zinc-50 leading-tight">Jadi Pelanggan Setia</span>
-
+        <span class="mt-1 block text-4xl lg:text-5xl tracking-tighter font-extrabold text-center lg:text-left">
+          <span class="inline text-gray-900 dark:text-zinc-50 leading-4">Membantu Anda Mengelola</span>
+          <span class="inline text-cyan-600 dark:text-cyan-400 leading-4"> WhatsApp Marketing</span>
+          <span class="inline text-gray-900 dark:text-zinc-50 leading-4">Dengan Mudah</span>
         </span>
       </h1>
       <p class="mt-3 text-base sm:mt-5 sm:text-xl lg:text-lg xl:text-xl dark:text-zinc-50 text-gray-500 text-center lg:text-left">
@@ -28,7 +21,7 @@ import heroImage from '../assets/img/logomark.svg';
         <div class="rounded-md shadow">
           <a
             href="/"
-            class="w-full flex items-center justify-center px-4 py-2 border border-transparent text-base font-medium rounded-md text-white bg-cyan-500 hover:bg-cyan-600 md:py-4 md:text-lg md:px-10"
+            class="w-full flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-cyan-500 hover:bg-cyan-600 "
           >
             Get started
           </a>
@@ -36,18 +29,18 @@ import heroImage from '../assets/img/logomark.svg';
         <div class="mt-3 sm:mt-0 sm:ml-3">
           <a
             href="/"
-            class="w-full flex items-center justify-center px-4 py-2 border border-transparent text-base font-medium rounded-md text-cyan-700 bg-cyan-100 hover:bg-cyan-200 md:py-4 md:text-lg md:px-10"
+            class="w-full flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-cyan-700 bg-cyan-100 hover:bg-cyan-200"
           >
             Live demo
           </a>
         </div>
       </div>
     </div>
+
     <div class="mt-12 relative sm:max-w-lg sm:mx-auto lg:mt-0 lg:max-w-none lg:mx-0 lg:col-span-6 lg:flex lg:items-center">
       <div class="relative mx-auto w-full">
         <div class="image-bg"></div>
-      <Image src={heroImage} alt='Hero Image' class="w-1/2 drop-shadow-lg shadow-cyan-800 mx-auto"/>
-
+        <Image src={heroImage} alt="Hero Image" class="w-1/2 drop-shadow-lg shadow-cyan-800 mx-auto" />
       </div>
     </div>
   </div>
@@ -59,33 +52,46 @@ import heroImage from '../assets/img/logomark.svg';
     top: 50%;
     left: 50%;
     border-radius: 50%;
-    width: 392px;
-    height: 392px;
+    width: 350px;
+    height: 350px;
     background-image: var(--vp-home-hero-image-background-image);
     filter: var(--vp-home-hero-image-filter);
-    transform: translate(-50%,-50%);
-}
+    transform: translate(-50%, -50%);
+  }
 
+  /* Extra small devices (phones, 600px and down) */
+  @media only screen and (max-width: 600px) {
+    .image-bg {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      border-radius: 50%;
+      width: 150px;
+      height: 150px;
+      background-image: var(--vp-home-hero-image-background-image);
+      filter: var(--vp-home-hero-image-filter);
+      transform: translate(-50%, -50%);
+    }
+  }
 
-:root {
---vp-home-hero-name-color: transparent;
---vp-home-hero-name-background: -webkit-linear-gradient(
-  120deg,
-  hsl(182, 81%, 44%),
-  hsl(177, 100%, 65%) 35%,
-  hsl(189, 100%, 78%) 45%,
-  hsl(182, 81%, 44%),
-  hsl(180, 69%, 42%)
-);
---vp-home-hero-image-background-image: linear-gradient(
-  -45deg,
-  hsla(177, 80%, 52%, 0.8),
-  hsla(189, 100%, 77%, 0.8) 40%,
-  hsla(192, 100%, 74%, 0.8) 45%,
-  hsla(172, 100%, 66%, 0.8) 60%,
-  hsla(184, 100%, 65%, 0.8)
-);
---vp-home-hero-image-filter: blur(80px);
-}
-
+  :root {
+    --vp-home-hero-name-color: transparent;
+    --vp-home-hero-name-background: -webkit-linear-gradient(
+      120deg,
+      hsl(182, 81%, 44%),
+      hsl(177, 100%, 65%) 35%,
+      hsl(189, 100%, 78%) 45%,
+      hsl(182, 81%, 44%),
+      hsl(180, 69%, 42%)
+    );
+    --vp-home-hero-image-background-image: linear-gradient(
+      -45deg,
+      hsla(177, 80%, 52%, 0.8),
+      hsla(189, 100%, 77%, 0.8) 40%,
+      hsla(192, 100%, 74%, 0.8) 45%,
+      hsla(172, 100%, 66%, 0.8) 60%,
+      hsla(184, 100%, 65%, 0.8)
+    );
+    --vp-home-hero-image-filter: blur(80px);
+  }
 </style>
