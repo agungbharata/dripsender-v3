@@ -12,5 +12,5 @@ module.exports = {
         sans: ["InterVariable", "Inter", ...defaultTheme.fontFamily.sans],
       },},
 	},
-	plugins: [require("tw-elements/dist/plugin.cjs")],
+	plugins: [require('@tailwindcss/typography')],
 }

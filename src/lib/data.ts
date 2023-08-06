@@ -1,7 +1,7 @@
 export const defaultMeta = {
-    title: "Astro for Docs",
-    keywords: "Astro, TailwindCSS",
-    description: "Built with Astro and TailwindCSS",
+    title: "Dripsender",
+    keywords: "Dripsender, WhatsApp",
+    description: "Tools WhatsApp Marketing No.1 Indonesia",
     baseUrl: "https://astrofordocs.vercel.app",
     path: "/",
     image: "/home.png",

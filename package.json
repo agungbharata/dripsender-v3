@@ -28,6 +28,7 @@
   },
   "devDependencies": {
     "@tailwindcss/line-clamp": "^0.4.4",
+    "@tailwindcss/typography": "^0.5.9",
     "accessible-astro-components": "^2.1.0"
   }
 }
