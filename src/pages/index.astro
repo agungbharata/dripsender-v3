@@ -1,6 +1,11 @@
 ---
 import Hero from "../components/Hero.astro";
 import Value from "../components/Value.astro";
+import Benefit from "../components/Benefit.astro";
+import Testimoni from "../components/Testimoni.astro";
+import Cta from "../components/Cta.astro";
+import Faq from "../components/Faq.astro";
+import Short from "../components/Short.astro"
 import MainLayout from "../layouts/MainLayout.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 ---
@@ -9,5 +14,11 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
   <main>
     <Hero />
     <Value />
+    <Benefit/>
+    <Testimoni/>
+
+    <Short/>
+    <Cta/>
+
   </main>
 </MainLayout>

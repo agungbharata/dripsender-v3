@@ -7,9 +7,10 @@ module.exports = {
 
 	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
 	theme: {
+		
 		extend: {fontFamily: {
         sans: ["InterVariable", "Inter", ...defaultTheme.fontFamily.sans],
       },},
 	},
-	plugins: [],
+	plugins: [require("tw-elements/dist/plugin.cjs")],
 }
