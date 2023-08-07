@@ -4,49 +4,31 @@ title: Membuat Campaign
 category: 4. Campaign
 ---
 
-## All your styles in a single line
+### 1. Pilih Menu Campaign dan Klik Tombol +Campaign
+![Alt text](/assets/docs/campaign1.jpg "Membuat Campaign")
 
-The official Tailwind CSS Typography plugin provides a set of prose classes you can use to add style defaults to any vanilla HTML you don’t control, like HTML rendered from Markdown, or pulled from a CMS with a single line of code. If we'd go back and add a couple of classes to our `src/layouts/Page.astro` layout file it would be enough to apply these styling defaults.
-
-```jsx
 ---
-const { frontmatter: title } = Astro.props;
+
+### 2. Tentukan Pengaturan Campaign
+![Alt text](/assets/docs/campaign2.jpg "Membuat Campaign")
+
+- **Nomor 3 :** pilih tipe campaign, personal untuk dikirim via japri kepada database, sedangkan group dikirim ke grup-grup WhatsApp yang dipilih
+- **Nomor 4 :** tulis judul campaign untuk memudahkan identifikasi campaign
+- **Nomor 5 :** untuk tipe campaign personal, silahkan pilih list database yang telah Anda buat sebelumnya, dan untuk campaign tipe group silahkan pilih grup yang ingin dikirimi campaign
+- **Nomor 6 :** aktifkan batch sending jika jumlah data kontak lebih dari 100 kontak. Sebaiknya setiap batch tidak lebih dari 100 kontak.
+- **Nomor 7 :** atur jadwal pengiriman (pastikan waktu kirim tidak lewat dari waktu saat menyimpan campaign)
+- **Nomor 8 :** isi konten campaign berupa teks (format pesan WhatsApp, bisa teks bold, italic, emoticon dan lainnya)
+- **Nomor 9 :** untuk mengirim file seperti gambar, file office dan pdf
+- **Nomor 10 :** untuk menambah pesan lain dalam sekali kirim campaign
+
 ---
-<html lang="en">
-  <head>
-    <title>{title}</title>
-  </head>
-  <body>
-    <main class="min-h-screen max-w-6xl mx-auto">
-      <article class="prose lg:prose-xl">
-        <h1>{title}</h1>
-          <slot />
-        </div>
-      </article>
-    </main>
-  </body>
-</html>
-```
 
-### Styling individual HTML elements
+### 3. Atur Delay Time dan Save Pengaturan
+![Alt text](/assets/docs/campaign3.jpg "Membuat Campaign")
 
-There are plenty of [element modifiers](https://tailwindcss.com/docs/typography-plugin#element-modifiers) that you can use to add utility classes to style individual elements. Additionally, we'd recommend adding: `dark:prose-invert`, which triggers hand-designed dark mode versions for every default color theme.
+- **Nomor 11 :** atur delay time antar pesan dalam satuan milisecond
+- **Nomor 12 :** atur delay time antar nomor kontak dalam satuan milisecond
+- **Nomor 13 :** save draft jika masih ingin memeriksa campaign (campaign belum berjalan)
+- **Nomor 14 :** save campaign jika campaign sudah fix, dan siap dikirim
 
-## How to use CSS in Astro
-
-Styling an Astro component is as easy as adding a `<style>` tag in any `*.astro` file, where they are automatically **scoped by default**. You can also opt-out of scoping by adding the `is:global` attribute. If you aren't using TailwindCSS, advance styling languages like [Sass](https://sass-lang.com/) and [Less](https://lesscss.org/) are also supported. 
-
-Say we want to change the look of an HTML element, even if we aren't authoring traditional CSS for our `<a>` and `<pre>` elements, could do something like this :
-
-```jsx
-<style>
-    .prose * > a {
-        @apply no-underline border-b-2 pb-1 hover:pb-2 transition-all;
-    }
-    .prose pre {
-        @apply p-5 drop-shadow-2xl;
-    }
-</style>
-```
-
-**Don't abuse `@apply` just for the sake of making things look "cleaner"**. As Tailwind recommends: If you’re going to use `@apply`, use it for very small, highly reusable things like buttons and form controls — and even then only if you’re not using a framework like React where a component would be a better choice.
+---
