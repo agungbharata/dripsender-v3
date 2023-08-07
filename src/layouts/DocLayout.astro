@@ -29,8 +29,7 @@ const { title, category, url } = Astro.props;
             path={url}
         />
     </head>
-    <body>
-        <Navbar items={navbarItems} />
+    <body>                <Navbar items={navbarItems} />
 
         <div
             id="container"
@@ -39,7 +38,7 @@ const { title, category, url } = Astro.props;
             <aside
                 aria-label="Sidebar navigation"
                 id="sidenav-open"
-                class="z-50 grid px-2 lg:px-6 lg:block grid-cols-[max-content_1fr] invisible target:visible lg:visible lg:translate-x-0 sticky top-0 max-h-screen -translate-x-full target:translate-x-0 transition-transform"
+                class="z-50 grid px-2 lg:px-6 lg:block grid-cols-[max-content_1fr] invisible target:visible lg:visible lg:translate-x-0 sticky top-0 max-h-screen -translate-x-full target:translate-x-0 transition-transform "
             >
                 <Sidenav pages={pages} currentPath={url ?? ""} />
             </aside>
