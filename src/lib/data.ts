@@ -2,25 +2,25 @@ export const defaultMeta = {
     title: "Dripsender",
     keywords: "Dripsender, WhatsApp",
     description: "Tools WhatsApp Marketing No.1 Indonesia",
-    baseUrl: "https://astrofordocs.vercel.app",
+    baseUrl: "https://dripsender.id",
     path: "/",
-    image: "/home.png",
+    image: "/thumb.jpg",
 };
 
 export const navbarItems = [
     {
         label: "GitHub",
-        href: "https://github.com/ekqt/astrofordocs",
+        href: "https://dripsender.id",
     },
 ];
 
 export const footerItems = [
     {
         label: "Twitter: @_ekqt",
-        href: "https://hectorsosa.me/twitter",
+        href: "https://dripsender.id",
     },
     {
         label: "hello@hectorsosa.me",
-        href: "https://hectorsosa.me/email",
+        href: "drip@dripsender.id",
     },
 ];
