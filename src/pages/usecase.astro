@@ -1,0 +1,28 @@
+---
+import { getCollection } from "astro:content";
+
+import MainLayout from "../layouts/MainLayout.astro";
+
+import PortfolioPreview from "../components/PortfolioPreview.astro";
+import Grid from "../components/Grid.astro";
+
+const projects = (await getCollection("usecase")).sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf());
+---
+
+<MainLayout title="Tips and Trick">
+  <section class="bg-slate-50 dark:bg-slate-900 p-4 lg:h-screen">
+    <div class="max-w-7xl mx-auto">
+      <main>
+        <ul class="grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 gap-2">
+          {
+            projects.map((project) => (
+              <li>
+                <PortfolioPreview project={project} />
+              </li>
+            ))
+          }
+        </ul>
+      </main>
+    </div>
+  </section>
+</MainLayout>

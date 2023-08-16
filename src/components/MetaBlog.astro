@@ -1,0 +1,17 @@
+---
+interface Props {
+  title: string;
+  tagline?: string;
+  align?: "start" | "center";
+}
+
+const { align = "center", tagline, title } = Astro.props;
+---
+
+<header>
+  <div class="stack gap-2">
+    <h1 class="text-gray-700 dark:text-gray-50 lg:text-4xl text-2xl font-extrabold">{title}</h1>
+    {tagline && <p class="tagline">{tagline}</p>}
+  </div>
+  <slot />
+</header>
