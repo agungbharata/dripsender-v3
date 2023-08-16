@@ -11,6 +11,6 @@ const { data, slug } = Astro.props.project;
 <div class="bg-cyan-200 dark:bg-gray-800 shadow-sm rounded-lg">
   <a class="grid" href={`/usecase/${slug}`}>
     <img src={data.img} alt={data.img_alt || ""} loading="lazy" decoding="async" class="rounded-t-lg" />
-    <h2 class="text-gray-800 dark:text-zinc-100 lg:text-lg text-md px-4 font-semibold my-4">{data.title}</h2>
+    <h2 class="text-gray-800 dark:text-zinc-100 text-lg px-4 font-semibold my-4">{data.title}</h2>
   </a>
 </div>
