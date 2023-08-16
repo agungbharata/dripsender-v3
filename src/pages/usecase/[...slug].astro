@@ -21,11 +21,11 @@ const { entry } = Astro.props;
 const { Content } = await entry.render();
 ---
 
-<section class="bg-slate-50 dark:bg-slate-900 lg:p-0 px-4">
+<section class="bg-slate-50 dark:bg-slate-900">
   <MainLayout title={entry.data.title}>
     <main class="max-w-5x mx-auto">
       <header>
-        <div class="items-center my-6 gap-2 max-w-3xl mx-auto text-center">
+        <div class="items-center my-6 gap-2 max-w-3xl mx-auto text-center px-4">
           <MetaBlog title={entry.data.title}>
             <p class="description text-gray-800 dark:text-gray-50 mt-2">{entry.data.description}</p>
           </MetaBlog>
@@ -34,7 +34,7 @@ const { Content } = await entry.render();
           </div>
         </div>
       </header>
-      <div class="max-w-4xl mx-auto gap-10 text-gray-800 dark:text-gray-50 text-base">
+      <div class="max-w-4xl mx-auto gap-10 text-gray-800 dark:text-gray-50 text-base px-4">
         {entry.data.img && <img class="rounded-lg w-full h-auto object-cover " src={entry.data.img} alt={entry.data.img_alt || ""} />}
         <div class="content">
           <Content />
