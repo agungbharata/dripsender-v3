@@ -3,6 +3,7 @@ import Meta from "../components/Meta.astro";
 import Navbar from "../components/NavbarDoc.astro";
 import Footer from "../components/Footer.astro";
 import Sidenav from "../components/Sidenav.astro";
+import GoogleAnalytic from "../components/GoogleAnalytic.astro";
 
 import { navbarItems, footerItems } from "../lib/data";
 
@@ -23,6 +24,7 @@ const { title, category, url } = Astro.props;
 
 <!DOCTYPE html>
 <html lang="en">
+    <GoogleAnalytic/>
     <head>
         <Meta
             title={title}
