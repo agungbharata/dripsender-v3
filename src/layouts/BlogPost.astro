@@ -1,6 +1,7 @@
 ---
 import type { MDXLayoutProps } from "astro";
 import type { DocsType } from "../lib/types";
+import ContactCS from "../components/ContactCS.astro"; 
 
 type Props = MDXLayoutProps<DocsType>;
 
@@ -17,5 +18,6 @@ const {
     class="dark:prose-invert max-w-none prose prose-p:leading-loose prose-li:leading-loose prose-headings:font-bold prose-headings:my-4"
   >
     <slot />
+     <ContactCS> 
   </article>
 </section>
