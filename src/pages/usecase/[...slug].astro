@@ -19,7 +19,9 @@ export async function getStaticPaths() {
     props: { entry },
   }));
 }
- 
+
+console.log(Astro)
+
 const { entry } = Astro.props;
  
 const { Content } = await entry.render();
@@ -43,18 +45,18 @@ const { Content } = await entry.render();
     <body class="overflow-hidden overflow-y-auto bg-auto">
       <Header />
 
-      <meta property="og:url" content={Astro.url.href} />
+      <meta property="og:url" content={Astro.url.href.replace("dripsender.id","www.dripsender.id")} />
       <meta property="og:type" content="article" />
       <meta property="og:title" content={entry.data.title} />
       <meta property="og:description" content={entry.data.subtitle || ""} />
 
-      <meta property="og:image" content={"//"+Astro.url.host+entry.data.img} />
+      <meta property="og:image" content={Astro.url.origin.replace("dripsender.id","www.dripsender.id")+entry.data.img} />
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="628" />
 
       <meta name="twitter:title" content={entry.data.title} />
       <meta name="twitter:description" content={entry.data.subtitle || ""} />
-      <meta name="twitter:image" content={"//"+Astro.url.host+entry.data.img} />
+      <meta name="twitter:image" content={Astro.url.origin.replace("dripsender.id","www.dripsender.id")+entry.data.img} />
       <meta name="twitter:card" content="summary_large_image" />
 
       <main class="max-w-5x mx-auto">
