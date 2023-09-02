@@ -4,6 +4,9 @@ import { CollectionEntry, getCollection } from "astro:content";
 import MainLayout from "../../layouts/MainLayout.astro";
 import MetaBlog from "../../components/MetaBlog.astro";
 import Icon from "../../components/Icon.astro";
+import Footer from "../../components/Footer.astro";
+import GoogleAnalytic from "../../components/GoogleAnalytic.astro";
+import Header from "../../components/Header.astro";
 
 interface Props {
   entry: CollectionEntry<"usecase">;
@@ -18,53 +21,90 @@ export async function getStaticPaths() {
 }
 
 const { entry } = Astro.props;
- 
+
 const { Content } = await entry.render();
 ---
 
 <section class="bg-slate-50 dark:bg-slate-900">
-  <MainLayout title={entry.data.title}>
- 
- 
-  <meta property="og:url" content={Astro.url.href} />
-  <meta property="og:type" content="article" />
-  <meta property="og:title" content={entry.data.title} />
-  <meta property="og:description"
-      content={entry.data.subtitle || ''} />
-  
-  <meta property="og:image" content={entry.data.img} />
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="628">
-  
-  
-  
-  <meta name="twitter:title"  content={entry.data.title}>
-  <meta name="twitter:description" content={entry.data.subtitle || ''} >
-  <meta name="twitter:image" content={entry.data.img}>
-  <meta name="twitter:card" content="summary_large_image">
+  <html lang="en">
+    <head>
+      <!-- GoogleAnalytic Tag -->
+      <GoogleAnalytic />
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width" />
+      <meta name="generator" content={Astro.generator} />
+      <title>{entry.data.title}</title>
+      <meta name="description" content={entry.data.subtitle || ""} />
+      <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+      />
+    </head>
+    <body class="overflow-hidden overflow-y-auto bg-auto">
+      <Header />
 
-    <main class="max-w-5x mx-auto">
-      <header>
-        <div class="items-center my-6 gap-2 max-w-3xl mx-auto text-center px-4">
-          <MetaBlog title={entry.data.title}>
-            <p class="description text-gray-800 dark:text-gray-50 mt-2">{entry.data.description}</p>
-          </MetaBlog>
-          <div class="mt-4 items-center justify-center flex text-gray-800 dark:text-gray-50 tags">
-            {entry.data.tags.map((t) => <span class="flex m-1 px-2 py-1 bg-cyan-700 text-white rounded-md">{t}</span>)}
+      <meta property="og:url" content={Astro.url.href} />
+      <meta property="og:type" content="article" />
+      <meta property="og:title" content={entry.data.title} />
+      <meta property="og:description" content={entry.data.subtitle || ""} />
+
+      <meta property="og:image" content={entry.data.img} />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="628" />
+
+      <meta name="twitter:title" content={entry.data.title} />
+      <meta name="twitter:description" content={entry.data.subtitle || ""} />
+      <meta name="twitter:image" content={entry.data.img} />
+      <meta name="twitter:card" content="summary_large_image" />
+
+      <main class="max-w-5x mx-auto">
+        <header>
+          <div
+            class="items-center my-6 gap-2 max-w-3xl mx-auto text-center px-4"
+          >
+            <MetaBlog title={entry.data.title}>
+              <p class="description text-gray-800 dark:text-gray-50 mt-2">
+                {entry.data.description}
+              </p>
+            </MetaBlog>
+            <div
+              class="mt-4 items-center justify-center flex text-gray-800 dark:text-gray-50 tags"
+            >
+              {
+                entry.data.tags.map((t) => (
+                  <span class="flex m-1 px-2 py-1 bg-cyan-700 text-white rounded-md">
+                    {t}
+                  </span>
+                ))
+              }
+            </div>
+          </div>
+        </header>
+        <div
+          class="max-w-4xl mx-auto gap-10 text-gray-800 dark:text-gray-50 text-base px-4"
+        >
+          {
+            entry.data.img && (
+              <img
+                class="rounded-lg w-full h-auto object-cover "
+                src={entry.data.img}
+                alt={entry.data.img_alt || ""}
+              />
+            )
+          }
+          <div class="content">
+            <Content />
           </div>
         </div>
-      </header>
-      <div class="max-w-4xl mx-auto gap-10 text-gray-800 dark:text-gray-50 text-base px-4">
-        {entry.data.img && <img class="rounded-lg w-full h-auto object-cover " src={entry.data.img} alt={entry.data.img_alt || ""} />}
-        <div class="content">
-          <Content />
-        </div>
+      </main>
+      <div class="w-40 mx-auto my-6">
+        <a
+          class="back-link rounded-full hover:bg-cyan-200 flex gap-2 justify-center items-center bg-cyan-400 text-gray-800 px-3 py-2"
+          href="/usecase/"><Icon icon="arrow-left" /> Usecase</a
+        >
       </div>
-    </main>
-    <div class="w-40 mx-auto my-6">
-      <a class="back-link rounded-full hover:bg-cyan-200 flex gap-2 justify-center items-center bg-cyan-400 text-gray-800 px-3 py-2" href="/usecase/"
-        ><Icon icon="arrow-left" /> Usecase</a
-      >
-    </div>
-  </MainLayout>
+
+      <Footer />
+    </body>
+  </html>
 </section>
