@@ -1,3 +1,8 @@
+---
+
+ 
+---
+
 <!-- This example requires Tailwind CSS v2.0+ -->
 <div class="bg-gray-50 dark:bg-gray-900  border border-gray-200 dark:border-gray-700">
     <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 md:py-16 lg:px-8 lg:py-20">
@@ -7,12 +12,32 @@
       </h2>
       <div class="mt-8 flex">
         <div class="inline-flex rounded-md shadow">
-          <a   href="https://portal.dripsender.id/register" class="inline-flex no-underline items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-cyan-500 hover:bg-cyan-700"> DAFTAR GRATIS </a>
+          <a  id="register-dripsender"  href="https://portal.dripsender.id/register" class="inline-flex no-underline items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-cyan-500 hover:bg-cyan-700"> DAFTAR GRATIS </a>
         </div>
         <div class="ml-3 inline-flex">
-          <a target="_blank" href="https://wa.me/6285609310304?text=Halo+Kak+Fey" class="inline-flex no-underline items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-cyan-700 bg-cyan-100 hover:bg-cyan-200"> KONTAK CS </a>
+          <a id="kontak-cs" target="_blank" href="https://wa.me/6285609310304?text=Halo+Kak+Fey" class="inline-flex no-underline items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-cyan-700 bg-cyan-100 hover:bg-cyan-200"> KONTAK CS </a>
         </div>
       </div>
     </div>
   </div>
   
+  <script>
+    // Processed! Bundled! TypeScript-supported!
+    // Importing local scripts and Node modules works.
+
+    document.querySelector("#register-dripsender").addEventListener("click", ()=>{
+      fbq('track', 'Lead',{
+        "content_name" : document.title
+      });
+      fbq('track','StartTrial')
+    })
+
+    document.querySelector("#kontak-cs").addEventListener("click", ()=>{
+      fbq('track', 'Lead',{
+        "content_name" : document.title
+      });
+      fbq('track','Contact')
+    })
+
+     
+  </script>
