@@ -7,7 +7,10 @@ import Faq from "../components/Faq.astro";
 import Short from "../components/Short.astro"
 import MainLayout from "../layouts/MainLayout.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
-import BestFeatures from "../components/BestFeatures.astro";
+import BestFeatures from "../components/BestFeatures.astro"; 
+import HomeCaseStudies from "../components/HomeCaseStudies.astro"; 
+ 
+ 
 ---
 
 <MainLayout title={SITE_TITLE}>
@@ -15,7 +18,7 @@ import BestFeatures from "../components/BestFeatures.astro";
     <Hero /> 
     <Benefit/>
     <BestFeatures></BestFeatures>
- 
+     <HomeCaseStudies/>
     <Cta/>
 
   </main>

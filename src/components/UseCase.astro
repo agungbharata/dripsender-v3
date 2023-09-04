@@ -1,0 +1,19 @@
+---
+import { getCollection } from "astro:content";
+import PortfolioPreview from "./PortfolioPreview.astro";
+
+const projects = (await getCollection("usecase")).sort((a, b) => a.data.id - b.data.id);
+
+---
+
+<main>
+    <ul class="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-2">
+      {
+        projects.map((project) => (
+          <li>
+            <PortfolioPreview project={project} />
+          </li>
+        ))
+      }
+    </ul>
+  </main>
