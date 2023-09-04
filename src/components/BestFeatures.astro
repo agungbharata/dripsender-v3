@@ -49,9 +49,8 @@ import RewardListBuilding from "../assets/img/Reward-List-Building.jpg";
     </h2>
     <p class="mt-6 text-gray-700 leading-relaxed max-w-3xl dark:text-gray-300">
       Out of the box, Dripsender memiliki semua Fitur untuk kebutuhan Whatsapp
-      Marketing. Mulai dari Seperti List Building, Evergreen Campaign, Broadcast
-      Campaign with AI, Automation with BOT, Chat GPT Assistant, Customer
-      Relationship Management, hingga Invoice Generator.
+      Marketing. Mulai dari List Building, Evergreen Campaign, Broadcast
+      Campaign with AI, Automation with BOT, Chat GPT Assistant, CRM, hingga Invoice Generator.
     </p>
 
     <div
@@ -165,6 +164,22 @@ import RewardListBuilding from "../assets/img/Reward-List-Building.jpg";
               <span class="font-medium">Chat GPT Assistant</span>
             </a>
           </li>
+          <li>
+            <a
+              href="#crm"
+              class="text-left p-4 lg:py-6 flex items-center gap-3 border-b lg:border-b-0 lg:border-r border-gray-100 bg-gray-50 text-gray-700 hover:bg-white"
+              :class="tab === 'chat-gpt-assistant' ? 'bg-white text-gray-800' : 'border-b lg:border-b-0 lg:border-r border-gray-100 bg-gray-50 text-gray-700 hover:bg-white'"
+              @click.prevent="changeTab('crm')"
+            >
+            
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 stroke-cyan-500">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z" />
+              </svg>
+              
+              
+              <span class="font-medium">CRM</span>
+            </a>
+          </li>
         </ul>
 
         <button
@@ -224,12 +239,12 @@ import RewardListBuilding from "../assets/img/Reward-List-Building.jpg";
             class="mt-4 leading-relaxed [&_pre]:bg-[#161414] [&_pre_code.torchlight]:!bg-[#161414] [&_pre]:leading-8 [&_pre]:p-2 [&_a]:text-red-600 [&_a]:underline hover:[&_a]:no-underline [&_strong]:font-medium [&_ul]:list-disc [&_ul]:ml-4 space-y-4"
           >
             <p>
-              Dengan Evergreen Campaign anda bisa mengotomasi proses Follow up
-              setelah List Building. Setelah Lead masuk ke dalam List anda, anda
-              bisa mengirimkan serial pesan sampai CLOSING.
+              Dengan Evergreen Campaign anda bisa mengotomasi proses Follow up. Setelah Lead masuk ke dalam List anda, pesan serial akan dikirim terus dalam rentang waktu tertentu sampai CLOSING.
             </p>
             <!-- @ts-ignore:next-line -->
             <Image src={EvergreenCampaign} alt="Image" format="avif" />
+            <p>Evergreen Campaign juga bisa dihentikan jika misal Calon Buyer sudah memutuskan untuk menjadi Pembeli pada Pesan kedua. Pesan ketiga dan seterusnya tidak perlu dikirimkan lagi. Ini akan membuat pesan menjadi lebih relevan dan tidak mengganggu.
+            </p>
           </div>
         </div>
 
@@ -325,34 +340,36 @@ import RewardListBuilding from "../assets/img/Reward-List-Building.jpg";
           </div>
         </div>
 
-        <div x-init="tabs.push('notifications')"></div>
+        <div x-init="tabs.push('crm')"></div>
 
         <div
           class="p-5 md:p-8 lg:px-12"
-          x-show="tab === 'notifications'"
+          x-show="tab === 'crm'"
           style="display: none;"
         >
-          <h3 class="font-bold text-2xl">Notifications &amp; Mail</h3>
+          <h3 class="font-bold text-2xl">Customer Relationship Management (CRM): Kunci Sukses Bisnis Anda!</h3>
           <div
             class="mt-4 leading-relaxed [&_pre]:bg-[#161414] [&_pre_code.torchlight]:!bg-[#161414] [&_pre]:leading-8 [&_pre]:p-2 [&_a]:text-red-600 [&_a]:underline hover:[&_a]:no-underline [&_strong]:font-medium [&_ul]:list-disc [&_ul]:ml-4 space-y-4"
           >
-            <p>
-              Use Laravel to quickly send beautifully styled notifications to
-              your users via email, Slack, SMS, in-app, and more:
-            </p>
+         
+<p>Apakah Anda tahu apa yang membedakan bisnis yang sukses dari yang biasa-biasa saja? Jawabannya ada pada hubungan yang mereka bangun dengan pelanggan!</p>
 
-            <pre><code data-theme="olaolu-palenight" data-lang="bash" class="torchlight" style="background-color: #292D3E; --theme-selection-background: #7580B850;"><!-- Syntax highlighted by torchlight.dev --><div class="line"><span style="color: #BFC7D5;">php </span><span style="color: #BFC7D5;">artisan</span><span style="color: #BFC7D5;"> </span><span style="color: #BFC7D5;">make:notification</span><span style="color: #BFC7D5;"> </span><span style="color: #BFC7D5;">InvoicePaid</span></div></code></pre>
+<p>CRM bukan hanya sekedar alat atau software, namun merupakan strategi bisnis yang revolusioner. Fokus utamanya? Ya, pelanggan setia!</p>
 
-            <p>
-              Once you have generated a notification, you can easily send the
-              message to one of your application's users:
-            </p>
+<p>🚀 <strong>Keunggulan CRM</strong> 🚀</p>
+<p>1. <strong>Kenali Pelanggan Lebih Dalam:</strong> Pelajari kebutuhan, selera, dan perilaku pelanggan Anda dengan akurasi yang tak tertandingi.</p>
+<p>2. <strong>Interaksi yang Berarti:</strong> Setiap interaksi Anda dengan pelanggan kini menjadi lebih personal dan berdampak.</p>
+<p>3. <strong>Efisiensi Maksimal:</strong> Hemat waktu, sumber daya, dan tenaga dengan mengotomatisasi proses bisnis Anda.</p>
+<p>4. <strong>Penjualan Meningkat:</strong> Dengan hubungan pelanggan yang kuat, loyalitas dan retensi meningkat, dan begitu juga penjualan!</p>
 
-            <pre><code data-theme="olaolu-palenight" data-lang="php" class="torchlight" style="background-color: #292D3E; --theme-selection-background: #7580B850;"><!-- Syntax highlighted by torchlight.dev --><div class="line"><span style="color: #BEC5D4;">$user</span><span style="color: #89DDFF;">-&gt;</span><span style="color: #82AAFF;">notify</span><span style="color: #BFC7D5;">(</span><span style="color: #89DDFF;">new</span><span style="color: #BFC7D5;"> </span><span style="color: #FFCB8B;">InvoicePaid</span><span style="color: #BFC7D5;">(</span><span style="color: #BEC5D4;">$invoice</span><span style="color: #BFC7D5;">));</span></div></code></pre>
+<p>✨ <strong>Transformasi Bisnis Anda</strong> ✨</p>
 
-            <p>
-              <a href="https://laravel.com/docs/notifications">Learn more</a>
-            </p>
+<p>Berpikir untuk mengambil langkah besar dalam bisnis? Membangun hubungan yang mendalam dengan pelanggan adalah kuncinya. CRM membantu Anda mencapai itu.</p>
+
+<p>Investasikan pada CRM sekarang, dan saksikan bisnis Anda tumbuh dan berkembang lebih dari yang Anda bayangkan!</p>
+
+<p><strong>Karena bisnis terbaik adalah bisnis yang mengerti hati pelanggannya.</strong></p>
+ 
           </div>
         </div>
 
