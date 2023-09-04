@@ -1,0 +1,494 @@
+---
+import { Image } from "@astrojs/image/components";
+import ListBuilding from "../assets/img/list-building-schema.jpeg";
+import EvergreenCampaign from "../assets/img/evergreen-campaign.jpeg";
+import DripsenderBot from "../assets/img/Dripsender-Bot.jpg";
+---
+
+<!-- @ts-ignore -->
+<div
+  x-data=`{
+    tab: null,
+    tabs: [],
+    scrolledLeft: true,
+    scrolledRight: false,
+    init() {
+         
+        this.tab = 'list-building'
+       console.log(this.tab)
+        this.updateScrollPosition()
+    },
+    changeTab(tab) {
+        if (this.tabs.includes(tab)) {
+            this.tab = tab
+            history.replaceState(null, null, '#' + tab)
+        }
+    },
+    scrollLeft() {
+        document.getElementById('feature-nav').scrollBy({ left: -200, behavior: 'smooth' })
+    },
+    scrollRight() {
+        document.getElementById('feature-nav').scrollBy({ left: 200, behavior: 'smooth' })
+    },
+    updateScrollPosition(event) {
+        const el = document.getElementById('feature-nav')
+        this.scrolledLeft = el.scrollLeft === 0
+        this.scrolledRight = (el.scrollWidth - el.offsetWidth) === el.scrollLeft
+    }
+}`
+  class="relative overflow-hidden py-16 md:pt-48 dark:bg-gray-900"
+  
+>
+  <span
+    class="hidden absolute bg-radial-gradient opacity-[.15] pointer-events-none lg:inline-flex right-[-20%] top-0 w-[640px] h-[640px]"
+  ></span>
+  <div class="relative max-w-screen-xl w-full mx-auto px-5">
+    <h2 class="text-4xl font-bold max-w-lg md:text-5xl dark:text-white">
+      Everything you need to be amazing.
+    </h2>
+    <p class="mt-6 text-gray-700 leading-relaxed max-w-3xl dark:text-gray-300">
+      Out of the box, Dripsender memiliki semua Fitur untuk kebutuhan Whatsapp
+      Marketing. Mulai dari Seperti List Building, Evergreen Campaign, Broadcast
+      Campaign with AI, Automation with BOT, Chat GPT Assistant, Customer
+      Relationship Management, hingga Invoice Generator.
+    </p>
+
+    <div
+      class="z-10 relative lg:h-[550px] max-w-[1100px] mt-12 flex flex-col lg:flex-row bg-white border border-gray-200 overflow-hidden"
+    >
+      <nav class="w-full flex relative lg:max-w-xs">
+        <div
+          class="hidden lg:block pointer-events-none absolute top-0 w-5 lg:w-full h-full lg:h-8 bg-gradient-to-r lg:bg-gradient-to-b from-white"
+        >
+        </div>
+        <div
+          class="hidden lg:block pointer-events-none absolute bottom-0 right-0 z-10 w-5 lg:w-full h-full lg:h-6 bg-gradient-to-l lg:bg-gradient-to-t from-white"
+        >
+        </div>
+
+        <button
+          class="lg:hidden w-6 bg-gray-50 border-r border-b border-gray-100 text-gray-600 disabled:text-gray-200 flex items-center justify-center"
+          :disabled="scrolledLeft"
+          @click="scrollLeft"
+          disabled="disabled"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+            class="w-5 h-5"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M12.79 5.23a.75.75 0 01-.02 1.06L8.832 10l3.938 3.71a.75.75 0 11-1.04 1.08l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 011.06.02z"
+              clip-rule="evenodd"></path>
+          </svg>
+        </button>
+
+        <ul
+          id="feature-nav"
+          class="flex-1 divide-x lg:divide-x-0 lg:divide-y divide-gray-100 max-h-full overflow-x-auto lg:overflow-x-visible lg:overflow-y-auto lg:overscroll-y-contain flex lg:block whitespace-nowrap text-sm lg:text-base"
+          @scroll.throttle.50ms="updateScrollPosition"
+        >
+          <li>
+            <a
+              href="#list-building"
+              class="text-left p-4 lg:py-6 flex items-center gap-3 bg-white text-gray-800"
+              :class="tab === 'list-building' ? 'bg-white text-gray-800' : 'border-b lg:border-b-0 lg:border-r border-gray-100 bg-gray-50 text-gray-700 hover:bg-white'"
+              @click.prevent="changeTab('list-building')"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="w-6 h-6 stroke-red-500"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z"
+                ></path>
+              </svg>
+              <span class="font-medium">List Building</span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="#evergreen-campaign"
+              class="text-left p-4 lg:py-6 flex items-center gap-3 border-b lg:border-b-0 lg:border-r border-gray-100 bg-gray-50 text-gray-700 hover:bg-white"
+              :class="tab === 'evergreen-campaign' ? 'bg-white text-gray-800' : 'border-b lg:border-b-0 lg:border-r border-gray-100 bg-gray-50 text-gray-700 hover:bg-white'"
+              @click.prevent="changeTab('evergreen-campaign')"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="w-6 h-6 stroke-red-500"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M15 9h3.75M15 12h3.75M15 15h3.75M4.5 19.5h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 19.5zm6-10.125a1.875 1.875 0 11-3.75 0 1.875 1.875 0 013.75 0zm1.294 6.336a6.721 6.721 0 01-3.17.789 6.721 6.721 0 01-3.168-.789 3.376 3.376 0 016.338 0z"
+                ></path>
+              </svg>
+              <span class="font-medium">Evergreen Campaign</span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="#bot-automation"
+              class="text-left p-4 lg:py-6 flex items-center gap-3 border-b lg:border-b-0 lg:border-r border-gray-100 bg-gray-50 text-gray-700 hover:bg-white"
+              :class="tab === 'bot-automation' ? 'bg-white text-gray-800' : 'border-b lg:border-b-0 lg:border-r border-gray-100 bg-gray-50 text-gray-700 hover:bg-white'"
+              @click.prevent="changeTab('bot-automation')"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="w-6 h-6 stroke-red-500"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M3.375 19.5h17.25m-17.25 0a1.125 1.125 0 01-1.125-1.125M3.375 19.5h7.5c.621 0 1.125-.504 1.125-1.125m-9.75 0V5.625m0 12.75v-1.5c0-.621.504-1.125 1.125-1.125m18.375 2.625V5.625m0 12.75c0 .621-.504 1.125-1.125 1.125m1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125m0 3.75h-7.5A1.125 1.125 0 0112 18.375m9.75-12.75c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125m19.5 0v1.5c0 .621-.504 1.125-1.125 1.125M2.25 5.625v1.5c0 .621.504 1.125 1.125 1.125m0 0h17.25m-17.25 0h7.5c.621 0 1.125.504 1.125 1.125M3.375 8.25c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125m17.25-3.75h-7.5c-.621 0-1.125.504-1.125 1.125m8.625-1.125c.621 0 1.125.504 1.125 1.125v1.5c0 .621-.504 1.125-1.125 1.125m-17.25 0h7.5m-7.5 0c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125M12 10.875v-1.5m0 1.5c0 .621-.504 1.125-1.125 1.125M12 10.875c0 .621.504 1.125 1.125 1.125m-2.25 0c.621 0 1.125.504 1.125 1.125M13.125 12h7.5m-7.5 0c-.621 0-1.125.504-1.125 1.125M20.625 12c.621 0 1.125.504 1.125 1.125v1.5c0 .621-.504 1.125-1.125 1.125m-17.25 0h7.5M12 14.625v-1.5m0 1.5c0 .621-.504 1.125-1.125 1.125M12 14.625c0 .621.504 1.125 1.125 1.125m-2.25 0c.621 0 1.125.504 1.125 1.125m0 1.5v-1.5m0 0c0-.621.504-1.125 1.125-1.125m0 0h7.5"
+                ></path>
+              </svg>
+              <span class="font-medium">Automation with BOT</span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="#campaign-with-ai"
+              class="text-left p-4 lg:py-6 flex items-center gap-3 border-b lg:border-b-0 lg:border-r border-gray-100 bg-gray-50 text-gray-700 hover:bg-white"
+              :class="tab === 'campaign-with-ai' ? 'bg-white text-gray-800' : 'border-b lg:border-b-0 lg:border-r border-gray-100 bg-gray-50 text-gray-700 hover:bg-white'"
+              @click.prevent="changeTab('campaign-with-ai')"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="w-6 h-6 stroke-red-500"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.153 16.556 18 12 18s-8.25-1.847-8.25-4.125v-3.75m16.5 0c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125"
+                ></path>
+              </svg>
+              <span class="font-medium">Campaign with AI</span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="#chat-gpt-assistant"
+              class="text-left p-4 lg:py-6 flex items-center gap-3 border-b lg:border-b-0 lg:border-r border-gray-100 bg-gray-50 text-gray-700 hover:bg-white"
+              :class="tab === 'chat-gpt-assistant' ? 'bg-white text-gray-800' : 'border-b lg:border-b-0 lg:border-r border-gray-100 bg-gray-50 text-gray-700 hover:bg-white'"
+              @click.prevent="changeTab('chat-gpt-assistant')"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="w-6 h-6 stroke-red-500"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z"
+                ></path>
+              </svg>
+              <span class="font-medium">Chat GPT Assistant</span>
+            </a>
+          </li>
+        </ul>
+
+        <button
+          class="lg:hidden w-6 bg-gray-50 border-l border-b border-gray-100 text-gray-600 disabled:text-gray-200 flex items-center justify-center"
+          :disabled="scrolledRight"
+          @click="scrollRight"
+          disabled="disabled"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+            class="w-5 h-5"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z"
+              clip-rule="evenodd"></path>
+          </svg>
+        </button>
+      </nav>
+
+      <div class="flex-1 overflow-y-auto">
+        <div x-init="tabs.push('list-building')"></div>
+
+        <div class="p-5 md:p-8 lg:px-12" x-show="tab === 'list-building'">
+          <h3 class="font-bold text-2xl">List Building</h3>
+          <div
+            class="mt-4 leading-relaxed [&_pre]:bg-[#161414] [&_pre_code.torchlight]:!bg-[#161414] [&_pre]:leading-8 [&_pre]:p-2 [&_a]:text-red-600 [&_a]:underline hover:[&_a]:no-underline [&_strong]:font-medium [&_ul]:list-disc [&_ul]:ml-4 space-y-4"
+          >
+            <p>
+              List Building adalah proses mengumpulkan kontak (biasanya berupa
+              alamat email atau nomor telepon) dari calon pelanggan atau
+              pelanggan yang sudah ada. Tujuannya adalah untuk terus
+              berkomunikasi, memberikan informasi, dan menawarkan produk atau
+              layanan kepada mereka.
+            </p>
+            <!-- @ts-ignore:next-line -->
+            <Image src={ListBuilding} alt="Image" format="avif" />
+            <p>
+              Gunakan Dripsender BOT untuk menyimpan Kontak secara Otomatis ke
+              dalam List ketika ada calon pelanggan menghubungi anda.
+            </p>
+          </div>
+        </div>
+
+        <div x-init="tabs.push('evergreen-campaign')"></div>
+
+        <div
+          class="p-5 md:p-8 lg:px-12"
+          x-show="tab === 'evergreen-campaign'"
+          style="display: none;"
+        >
+          <h3 class="font-bold text-2xl">Evergreen Campaign</h3>
+          <div
+            class="mt-4 leading-relaxed [&_pre]:bg-[#161414] [&_pre_code.torchlight]:!bg-[#161414] [&_pre]:leading-8 [&_pre]:p-2 [&_a]:text-red-600 [&_a]:underline hover:[&_a]:no-underline [&_strong]:font-medium [&_ul]:list-disc [&_ul]:ml-4 space-y-4"
+          >
+            <p>
+              Dengan Evergreen Campaign anda bisa mengotomasi proses Follow up
+              setelah List Building. Setelah Lead masuk ke dalam List anda, anda
+              bisa mengirimkan serial pesan sampai CLOSING.
+            </p>
+            <!-- @ts-ignore:next-line -->
+            <Image src={EvergreenCampaign} alt="Image" format="avif" />
+          </div>
+        </div>
+
+        <div x-init="tabs.push('bot-automation')"></div>
+
+        <div
+          class="p-5 md:p-8 lg:px-12"
+          x-show="tab === 'bot-automation'"
+          style="display: none;"
+        >
+          <h3 class="font-bold text-2xl">Automation with BOT</h3>
+          <div
+            class="mt-4 leading-relaxed [&_pre]:bg-[#161414] [&_pre_code.torchlight]:!bg-[#161414] [&_pre]:leading-8 [&_pre]:p-2 [&_a]:text-red-600 [&_a]:underline hover:[&_a]:no-underline [&_strong]:font-medium [&_ul]:list-disc [&_ul]:ml-4 space-y-4"
+          >
+            <p>
+              Dripsender BOT akan membaca semua pesan yang masuk. Jika ada
+              Keyword yang sesuai dengan text pesan, maka secara OTOMATIS akan
+              mentrigger Action yang anda set.
+            </p>
+            <!-- @ts-ignore:next-line -->
+            <Image src={DripsenderBot} alt="Image" format="avif" />
+          </div>
+        </div>
+
+        <div x-init="tabs.push('campaign-with-ai')"></div>
+
+        <div
+          class="p-5 md:p-8 lg:px-12"
+          x-show="tab === 'campaign-with-ai'"
+          style="display: none;"
+        >
+          <h3 class="font-bold text-2xl">Campaign with AI</h3>
+          <div
+            class="mt-4 leading-relaxed [&_pre]:bg-[#161414] [&_pre_code.torchlight]:!bg-[#161414] [&_pre]:leading-8 [&_pre]:p-2 [&_a]:text-red-600 [&_a]:underline hover:[&_a]:no-underline [&_strong]:font-medium [&_ul]:list-disc [&_ul]:ml-4 space-y-4"
+          >
+            <p>Gak Jago Nulis, Tapi Mau buat tulisan menghipnotis?</p>
+            <p>
+              Tidak perlu lagi menjadi seorang ahli dalam menulis, karena kami
+              telah menggabungkan teknologi AI terdepan dengan kreativitasmu.
+              Sekarang, dengan mudahnya, Anda bisa membuat kata-kata yang
+              menggugah, penuh daya tarik, dan menjual tanpa perlu repot-repot
+              memikirkan setiap kata yang harus ditulis.
+            </p>
+            <p>Begini caranya:</p>
+            <p>
+              1. Cukup tuliskan sedikit informasi tentang produk atau
+              kampanyemu.
+            </p>
+            <p>
+              2. Kemudian, berikan panduan singkat tentang gaya, nada, dan pesan
+              yang ingin Anda sampaikan.
+            </p>
+            <p>
+              3. Biarkan AI kami mengambil alih dan menghasilkan teks yang luar
+              biasa sesuai dengan panduanmu!
+            </p>
+            <p>
+              Tunggu apa lagi? Segera coba layanan kami yang revolusioner ini
+              dan rasakan sendiri bagaimana AI dapat membantu Anda menghadirkan
+              kata-kata yang mendalam dan mengesankan.
+            </p>
+            <p>Hemat waktu, tenaga, dan pastinya pikiranmu!</p>
+          </div>
+        </div>
+
+        <div x-init="tabs.push('chat-gpt-assistant')"></div>
+
+        <div
+          class="p-5 md:p-8 lg:px-12"
+          x-show="tab === 'chat-gpt-assistant'"
+          style="display: none;"
+        >
+          <h3 class="font-bold text-2xl">CHAT GPT Assistant</h3>
+          <div
+            class="mt-4 leading-relaxed [&_pre]:bg-[#161414] [&_pre_code.torchlight]:!bg-[#161414] [&_pre]:leading-8 [&_pre]:p-2 [&_a]:text-red-600 [&_a]:underline hover:[&_a]:no-underline [&_strong]:font-medium [&_ul]:list-disc [&_ul]:ml-4 space-y-4"
+          >
+            <p>
+             Integrasikan Whatsapp Anda dengan Chat GPT Assistant. Dengan Mengubah Whatsapp Anda menjadi CHAT GPT, Anda bisa mengotomasi semua pesan yang masuk ke dalam Whatsapp Anda.
+            </p>
+            <p>Selanjutnya AI yang akan memberikan balasan kepada semua pertanyaan yang masuk.</p>
+          </div>
+        </div>
+
+        <div x-init="tabs.push('notifications')"></div>
+
+        <div
+          class="p-5 md:p-8 lg:px-12"
+          x-show="tab === 'notifications'"
+          style="display: none;"
+        >
+          <h3 class="font-bold text-2xl">Notifications &amp; Mail</h3>
+          <div
+            class="mt-4 leading-relaxed [&_pre]:bg-[#161414] [&_pre_code.torchlight]:!bg-[#161414] [&_pre]:leading-8 [&_pre]:p-2 [&_a]:text-red-600 [&_a]:underline hover:[&_a]:no-underline [&_strong]:font-medium [&_ul]:list-disc [&_ul]:ml-4 space-y-4"
+          >
+            <p>
+              Use Laravel to quickly send beautifully styled notifications to
+              your users via email, Slack, SMS, in-app, and more:
+            </p>
+
+            <pre><code data-theme="olaolu-palenight" data-lang="bash" class="torchlight" style="background-color: #292D3E; --theme-selection-background: #7580B850;"><!-- Syntax highlighted by torchlight.dev --><div class="line"><span style="color: #BFC7D5;">php </span><span style="color: #BFC7D5;">artisan</span><span style="color: #BFC7D5;"> </span><span style="color: #BFC7D5;">make:notification</span><span style="color: #BFC7D5;"> </span><span style="color: #BFC7D5;">InvoicePaid</span></div></code></pre>
+
+            <p>
+              Once you have generated a notification, you can easily send the
+              message to one of your application's users:
+            </p>
+
+            <pre><code data-theme="olaolu-palenight" data-lang="php" class="torchlight" style="background-color: #292D3E; --theme-selection-background: #7580B850;"><!-- Syntax highlighted by torchlight.dev --><div class="line"><span style="color: #BEC5D4;">$user</span><span style="color: #89DDFF;">-&gt;</span><span style="color: #82AAFF;">notify</span><span style="color: #BFC7D5;">(</span><span style="color: #89DDFF;">new</span><span style="color: #BFC7D5;"> </span><span style="color: #FFCB8B;">InvoicePaid</span><span style="color: #BFC7D5;">(</span><span style="color: #BEC5D4;">$invoice</span><span style="color: #BFC7D5;">));</span></div></code></pre>
+
+            <p>
+              <a href="https://laravel.com/docs/notifications">Learn more</a>
+            </p>
+          </div>
+        </div>
+
+        <div x-init="tabs.push('storage')"></div>
+
+        <div
+          class="p-5 md:p-8 lg:px-12"
+          x-show="tab === 'storage'"
+          style="display: none;"
+        >
+          <h3 class="font-bold text-2xl">File Storage</h3>
+          <div
+            class="mt-4 leading-relaxed [&_pre]:bg-[#161414] [&_pre_code.torchlight]:!bg-[#161414] [&_pre]:leading-8 [&_pre]:p-2 [&_a]:text-red-600 [&_a]:underline hover:[&_a]:no-underline [&_strong]:font-medium [&_ul]:list-disc [&_ul]:ml-4 space-y-4"
+          >
+            <p>
+              Laravel provides a robust filesystem abstraction layer, providing
+              a single, unified API for interacting with local filesystems and
+              cloud based filesystems like Amazon S3:
+            </p>
+
+            <pre><code data-theme="olaolu-palenight" data-lang="php" class="torchlight" style="background-color: #292D3E; --theme-selection-background: #7580B850;"><!-- Syntax highlighted by torchlight.dev --><div class="line"><span style="color: #BEC5D4;">$path</span><span style="color: #BFC7D5;"> </span><span style="color: #C792EA;">=</span><span style="color: #BFC7D5;"> </span><span style="color: #BEC5D4;">$request</span><span style="color: #89DDFF;">-&gt;</span><span style="color: #82AAFF;">file</span><span style="color: #BFC7D5;">(</span><span style="color: #D9F5DD;">'</span><span style="color: #C3E88D;">avatar</span><span style="color: #D9F5DD;">'</span><span style="color: #BFC7D5;">)</span><span style="color: #89DDFF;">-&gt;</span><span style="color: #82AAFF;">store</span><span style="color: #BFC7D5;">(</span><span style="color: #D9F5DD;">'</span><span style="color: #C3E88D;">s3</span><span style="color: #D9F5DD;">'</span><span style="color: #BFC7D5;">);</span></div></code></pre>
+
+            <p>
+              Regardless of where your files are stored, interact with them
+              using Laravel's simple, elegant syntax:
+            </p>
+
+            <pre><code data-theme="olaolu-palenight" data-lang="php" class="torchlight" style="background-color: #292D3E; --theme-selection-background: #7580B850;"><!-- Syntax highlighted by torchlight.dev --><div class="line"><span style="color: #BEC5D4;">$content</span><span style="color: #BFC7D5;"> </span><span style="color: #C792EA;">=</span><span style="color: #BFC7D5;"> </span><span style="color: #FFCB8B;">Storage</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">get</span><span style="color: #BFC7D5;">(</span><span style="color: #D9F5DD;">'</span><span style="color: #C3E88D;">photo.jpg</span><span style="color: #D9F5DD;">'</span><span style="color: #BFC7D5;">);</span></div><div class="line">&nbsp;</div><div class="line"><span style="color: #FFCB8B;">Storage</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">put</span><span style="color: #BFC7D5;">(</span><span style="color: #D9F5DD;">'</span><span style="color: #C3E88D;">photo.jpg</span><span style="color: #D9F5DD;">'</span><span style="color: #BFC7D5;">, </span><span style="color: #BEC5D4;">$content</span><span style="color: #BFC7D5;">);</span></div></code></pre>
+
+            <p><a href="https://laravel.com/docs/filesystem">Learn more</a></p>
+          </div>
+        </div>
+
+        <div x-init="tabs.push('queues')"></div>
+
+        <div
+          class="p-5 md:p-8 lg:px-12"
+          x-show="tab === 'queues'"
+          style="display: none;"
+        >
+          <h3 class="font-bold text-2xl">Job Queues</h3>
+          <div
+            class="mt-4 leading-relaxed [&_pre]:bg-[#161414] [&_pre_code.torchlight]:!bg-[#161414] [&_pre]:leading-8 [&_pre]:p-2 [&_a]:text-red-600 [&_a]:underline hover:[&_a]:no-underline [&_strong]:font-medium [&_ul]:list-disc [&_ul]:ml-4 space-y-4"
+          >
+            <p>
+              Laravel lets you to offload slow jobs to a background queue,
+              keeping your web requests snappy:
+            </p>
+
+            <pre><code data-theme="olaolu-palenight" data-lang="php" class="torchlight has-focus-lines" style="background-color: #292D3E; --theme-selection-background: #7580B850;"><!-- Syntax highlighted by torchlight.dev --><div class="line"><span style="color: #BEC5D4;">$podcast</span><span style="color: #BFC7D5;"> </span><span style="color: #C792EA;">=</span><span style="color: #BFC7D5;"> </span><span style="color: #FFCB8B;">Podcast</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">create</span><span style="color: #BFC7D5;">(</span><span style="color: #697098;">/*</span><span style="color: #697098;"> ... </span><span style="color: #697098;">*/</span><span style="color: #BFC7D5;">);</span></div><div class="line">&nbsp;</div><div class="line line-focus"><span style="color: #FFCB8B;">ProcessPodcast</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">dispatch</span><span style="color: #BFC7D5;">(</span><span style="color: #BEC5D4;">$podcast</span><span style="color: #BFC7D5;">)</span><span style="color: #89DDFF;">-&gt;</span><span style="color: #82AAFF;">onQueue</span><span style="color: #BFC7D5;">(</span><span style="color: #D9F5DD;">'</span><span style="color: #C3E88D;">podcasts</span><span style="color: #D9F5DD;">'</span><span style="color: #BFC7D5;">);</span></div></code></pre>
+
+            <p>
+              You can run as many queue workers as you need to handle your
+              workload:
+            </p>
+
+            <pre><code data-theme="olaolu-palenight" data-lang="bash" class="torchlight" style="background-color: #292D3E; --theme-selection-background: #7580B850;"><!-- Syntax highlighted by torchlight.dev --><div class="line"><span style="color: #BFC7D5;">php </span><span style="color: #BFC7D5;">artisan</span><span style="color: #BFC7D5;"> </span><span style="color: #BFC7D5;">queue:work</span><span style="color: #BFC7D5;"> </span><span style="color: #BFC7D5;">redis</span><span style="color: #BFC7D5;"> </span><span style="color: #82AAFF;">--queue=podcasts</span></div></code></pre>
+
+            <p>
+              For more visibility and control over your queues, <a
+                href="https://laravel.com/docs/horizon">Laravel Horizon</a
+              > provides a beautiful dashboard and code-driven configuration for
+              your Laravel-powered Redis queues.
+            </p>
+
+            <p><strong>Learn more</strong></p>
+            <ul>
+              <li><a href="https://laravel.com/docs/queues">Job Queues</a></li>
+              <li>
+                <a href="https://laravel.com/docs/horizon">Laravel Horizon</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div x-init="tabs.push('scheduling')"></div>
+
+        <div
+          class="p-5 md:p-8 lg:px-12"
+          x-show="tab === 'scheduling'"
+          style="display: none;"
+        >
+          <h3 class="font-bold text-2xl">Task Scheduling</h3>
+          <div
+            class="mt-4 leading-relaxed [&_pre]:bg-[#161414] [&_pre_code.torchlight]:!bg-[#161414] [&_pre]:leading-8 [&_pre]:p-2 [&_a]:text-red-600 [&_a]:underline hover:[&_a]:no-underline [&_strong]:font-medium [&_ul]:list-disc [&_ul]:ml-4 space-y-4"
+          >
+            <p>
+              Schedule recurring jobs and commands with an expressive syntax and
+              say goodbye to complicated configuration files:
+            </p>
+
+            <pre><code data-theme="olaolu-palenight" data-lang="php" class="torchlight" style="background-color: #292D3E; --theme-selection-background: #7580B850;"><!-- Syntax highlighted by torchlight.dev --><div class="line"><span style="color: #BEC5D4;">$schedule</span><span style="color: #89DDFF;">-&gt;</span><span style="color: #82AAFF;">job</span><span style="color: #BFC7D5;">(</span><span style="color: #FFCB8B;">NotifySubscribers</span><span style="color: #89DDFF;">::</span><span style="color: #C792EA;">class</span><span style="color: #BFC7D5;">)</span><span style="color: #89DDFF;">-&gt;</span><span style="color: #82AAFF;">hourly</span><span style="color: #BFC7D5;">();</span></div></code></pre>
+
+            <p>
+              Laravel's scheduler can even handle multiple servers and offers
+              built-in overlap prevention:
+            </p>
+
+            <pre><code data-theme="olaolu-palenight" data-lang="php" class="torchlight" style="background-color: #292D3E; --theme-selection-background: #7580B850;"><!-- Syntax highlighted by torchlight.dev --><div class="line"><span style="color: #BEC5D4;">$schedule</span><span style="color: #89DDFF;">-&gt;</span><span style="color: #82AAFF;">job</span><span style="color: #BFC7D5;">(</span><span style="color: #FFCB8B;">NotifySubscribers</span><span style="color: #89DDFF;">::</span><span style="color: #C792EA;">class</span><span style="color: #BFC7D5;">)</span></div><div class="line"><span style="color: #BFC7D5;">    </span><span style="color: #89DDFF;">-&gt;</span><span style="color: #82AAFF;">dailyAt</span><span style="color: #BFC7D5;">(</span><span style="color: #D9F5DD;">'</span><span style="color: #C3E88D;">9:00</span><span style="color: #D9F5DD;">'</span><span style="color: #BFC7D5;">)</span></div><div class="line"><span style="color: #BFC7D5;">    </span><span style="color: #89DDFF;">-&gt;</span><span style="color: #82AAFF;">onOneServer</span><span style="color: #BFC7D5;">();</span></div><div class="line"><span style="color: #BFC7D5;">    </span><span style="color: #89DDFF;">-&gt;</span><span style="color: #82AAFF;">withoutOverlapping</span><span style="color: #BFC7D5;">();</span></div></code></pre>
+
+            <p><a href="https://laravel.com/docs/scheduling">Learn more</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
