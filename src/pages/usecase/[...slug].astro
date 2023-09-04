@@ -7,6 +7,10 @@ import Icon from "../../components/Icon.astro";
 import Footer from "../../components/Footer.astro";
 import GoogleAnalytic from "../../components/GoogleAnalytic.astro";
 import Header from "../../components/Header.astro";
+import PortfolioPreview from "../../components/PortfolioPreview.astro";
+
+const projects = (await getCollection("usecase")).sort((a, b) => a.data.id - b.data.id);
+
 
 interface Props {
   entry: CollectionEntry<"usecase">;
@@ -117,6 +121,22 @@ const { Content } = await entry.render();
           </div>
         </div>
       </main>
+      <div class="max-w-5xl p-5 mx-auto">
+        <div class="mb-4 dark:text-white text-lg font-medium">
+          Baca Use Case yang lain
+        </div>
+        <main>
+          <ul class="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-2">
+            {
+              projects.map((project) => (
+                <li>
+                  <PortfolioPreview project={project} />
+                </li>
+              ))
+            }
+          </ul>
+        </main>
+      </div>
       <div class=" flex justify-center w-full my-6">
         <a
           class="back-link rounded-full hover:bg-cyan-200 flex gap-2 justify-center items-center bg-cyan-400 text-gray-800 px-5 py-2"
