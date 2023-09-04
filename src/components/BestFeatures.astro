@@ -50,7 +50,7 @@ import RewardListBuilding from "../assets/img/Reward-List-Building.jpg";
     <p class="mt-6 text-gray-700 leading-relaxed max-w-3xl dark:text-gray-300">
       Out of the box, Dripsender memiliki semua Fitur untuk kebutuhan Whatsapp
       Marketing. Mulai dari List Building, Evergreen Campaign, Broadcast
-      Campaign with AI, Automation with BOT, Chat GPT Assistant, CRM, hingga Invoice Generator.
+      Campaign with AI, Automation with BOT, Chat GPT Assistant, CRM, hingga Online POS.
     </p>
 
     <div
@@ -168,7 +168,7 @@ import RewardListBuilding from "../assets/img/Reward-List-Building.jpg";
             <a
               href="#crm"
               class="text-left p-4 lg:py-6 flex items-center gap-3 border-b lg:border-b-0 lg:border-r border-gray-100 bg-gray-50 text-gray-700 hover:bg-white"
-              :class="tab === 'chat-gpt-assistant' ? 'bg-white text-gray-800' : 'border-b lg:border-b-0 lg:border-r border-gray-100 bg-gray-50 text-gray-700 hover:bg-white'"
+              :class="tab === 'crm' ? 'bg-white text-gray-800' : 'border-b lg:border-b-0 lg:border-r border-gray-100 bg-gray-50 text-gray-700 hover:bg-white'"
               @click.prevent="changeTab('crm')"
             >
             
@@ -178,6 +178,24 @@ import RewardListBuilding from "../assets/img/Reward-List-Building.jpg";
               
               
               <span class="font-medium">CRM</span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="#pos"
+              class="text-left p-4 lg:py-6 flex items-center gap-3 border-b lg:border-b-0 lg:border-r border-gray-100 bg-gray-50 text-gray-700 hover:bg-white"
+              :class="tab === 'pos' ? 'bg-white text-gray-800' : 'border-b lg:border-b-0 lg:border-r border-gray-100 bg-gray-50 text-gray-700 hover:bg-white'"
+              @click.prevent="changeTab('pos')"
+            >
+            
+            
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 stroke-cyan-500">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
+              </svg>
+              
+              
+              
+              <span class="font-medium">Online POS</span>
             </a>
           </li>
         </ul>
@@ -373,106 +391,35 @@ import RewardListBuilding from "../assets/img/Reward-List-Building.jpg";
           </div>
         </div>
 
-        <div x-init="tabs.push('storage')"></div>
+        <div x-init="tabs.push('pos')"></div>
 
         <div
           class="p-5 md:p-8 lg:px-12"
-          x-show="tab === 'storage'"
+          x-show="tab === 'pos'"
           style="display: none;"
         >
-          <h3 class="font-bold text-2xl">File Storage</h3>
+          <h3 class="font-bold text-2xl">Online POS</h3>
           <div
             class="mt-4 leading-relaxed [&_pre]:bg-[#161414] [&_pre_code.torchlight]:!bg-[#161414] [&_pre]:leading-8 [&_pre]:p-2 [&_a]:text-red-600 [&_a]:underline hover:[&_a]:no-underline [&_strong]:font-medium [&_ul]:list-disc [&_ul]:ml-4 space-y-4"
           >
-            <p>
-              Laravel provides a robust filesystem abstraction layer, providing
-              a single, unified API for interacting with local filesystems and
-              cloud based filesystems like Amazon S3:
-            </p>
+        <p>  "Optimalkan bisnis Anda dengan platform POS online kami yang inovatif! Kami telah menyediakan fitur-fitur khusus untuk membantu Anda dalam mengelola usaha dengan lebih efisien:</p>
 
-            <pre><code data-theme="olaolu-palenight" data-lang="php" class="torchlight" style="background-color: #292D3E; --theme-selection-background: #7580B850;"><!-- Syntax highlighted by torchlight.dev --><div class="line"><span style="color: #BEC5D4;">$path</span><span style="color: #BFC7D5;"> </span><span style="color: #C792EA;">=</span><span style="color: #BFC7D5;"> </span><span style="color: #BEC5D4;">$request</span><span style="color: #89DDFF;">-&gt;</span><span style="color: #82AAFF;">file</span><span style="color: #BFC7D5;">(</span><span style="color: #D9F5DD;">'</span><span style="color: #C3E88D;">avatar</span><span style="color: #D9F5DD;">'</span><span style="color: #BFC7D5;">)</span><span style="color: #89DDFF;">-&gt;</span><span style="color: #82AAFF;">store</span><span style="color: #BFC7D5;">(</span><span style="color: #D9F5DD;">'</span><span style="color: #C3E88D;">s3</span><span style="color: #D9F5DD;">'</span><span style="color: #BFC7D5;">);</span></div></code></pre>
-
-            <p>
-              Regardless of where your files are stored, interact with them
-              using Laravel's simple, elegant syntax:
-            </p>
-
-            <pre><code data-theme="olaolu-palenight" data-lang="php" class="torchlight" style="background-color: #292D3E; --theme-selection-background: #7580B850;"><!-- Syntax highlighted by torchlight.dev --><div class="line"><span style="color: #BEC5D4;">$content</span><span style="color: #BFC7D5;"> </span><span style="color: #C792EA;">=</span><span style="color: #BFC7D5;"> </span><span style="color: #FFCB8B;">Storage</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">get</span><span style="color: #BFC7D5;">(</span><span style="color: #D9F5DD;">'</span><span style="color: #C3E88D;">photo.jpg</span><span style="color: #D9F5DD;">'</span><span style="color: #BFC7D5;">);</span></div><div class="line">&nbsp;</div><div class="line"><span style="color: #FFCB8B;">Storage</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">put</span><span style="color: #BFC7D5;">(</span><span style="color: #D9F5DD;">'</span><span style="color: #C3E88D;">photo.jpg</span><span style="color: #D9F5DD;">'</span><span style="color: #BFC7D5;">, </span><span style="color: #BEC5D4;">$content</span><span style="color: #BFC7D5;">);</span></div></code></pre>
-
-            <p><a href="https://laravel.com/docs/filesystem">Learn more</a></p>
+         <p> 1. <strong>Pembayaran Lebih Mudah, Pilihan Lebih Banyak :</strong> Nikmati kemudahan menerima pembayaran melalui berbagai metode, termasuk QRIS, transfer bank, virtual account, dan gerai Indomaret/Alfamart. Dengan pilihan yang beragam, Anda dapat menjangkau lebih banyak pelanggan dengan mudah.</p>
+          
+         <p> 2. <strong>Pantau Transaksi dengan Notifikasi Otomatis : </strong> Kami tahu betapa pentingnya mengawasi setiap transaksi. Oleh karena itu, sistem kami mengirimkan notifikasi otomatis setiap kali ada transaksi berhasil. Ini membantu Anda merespon dengan cepat dan mengelola stok serta pesanan dengan lebih baik.</p>
+          
+         <p> 3. <strong>Informasi Pengantaran yang Lebih Terstruktur : </strong> Dengan notifikasi otomatis mengenai status pengantaran barang, Anda dapat memberikan informasi yang lebih jelas kepada pelanggan. Hal ini membantu Anda membangun kepercayaan dan meningkatkan kepuasan pelanggan.</p>
+          
+         <p> Manfaatkan kemudahan dan efisiensi dari platform POS online kami untuk mengembangkan bisnis Anda. Kami berkomitmen untuk memberikan alat yang Anda butuhkan agar bisnis Anda dapat berjalan lebih lancar dan sukses. Bergabunglah sekarang dan tingkatkan kinerja usaha Anda bersama kami!"</p>
+ 
           </div>
         </div>
 
-        <div x-init="tabs.push('queues')"></div>
+        
 
-        <div
-          class="p-5 md:p-8 lg:px-12"
-          x-show="tab === 'queues'"
-          style="display: none;"
-        >
-          <h3 class="font-bold text-2xl">Job Queues</h3>
-          <div
-            class="mt-4 leading-relaxed [&_pre]:bg-[#161414] [&_pre_code.torchlight]:!bg-[#161414] [&_pre]:leading-8 [&_pre]:p-2 [&_a]:text-red-600 [&_a]:underline hover:[&_a]:no-underline [&_strong]:font-medium [&_ul]:list-disc [&_ul]:ml-4 space-y-4"
-          >
-            <p>
-              Laravel lets you to offload slow jobs to a background queue,
-              keeping your web requests snappy:
-            </p>
+         
 
-            <pre><code data-theme="olaolu-palenight" data-lang="php" class="torchlight has-focus-lines" style="background-color: #292D3E; --theme-selection-background: #7580B850;"><!-- Syntax highlighted by torchlight.dev --><div class="line"><span style="color: #BEC5D4;">$podcast</span><span style="color: #BFC7D5;"> </span><span style="color: #C792EA;">=</span><span style="color: #BFC7D5;"> </span><span style="color: #FFCB8B;">Podcast</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">create</span><span style="color: #BFC7D5;">(</span><span style="color: #697098;">/*</span><span style="color: #697098;"> ... </span><span style="color: #697098;">*/</span><span style="color: #BFC7D5;">);</span></div><div class="line">&nbsp;</div><div class="line line-focus"><span style="color: #FFCB8B;">ProcessPodcast</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">dispatch</span><span style="color: #BFC7D5;">(</span><span style="color: #BEC5D4;">$podcast</span><span style="color: #BFC7D5;">)</span><span style="color: #89DDFF;">-&gt;</span><span style="color: #82AAFF;">onQueue</span><span style="color: #BFC7D5;">(</span><span style="color: #D9F5DD;">'</span><span style="color: #C3E88D;">podcasts</span><span style="color: #D9F5DD;">'</span><span style="color: #BFC7D5;">);</span></div></code></pre>
-
-            <p>
-              You can run as many queue workers as you need to handle your
-              workload:
-            </p>
-
-            <pre><code data-theme="olaolu-palenight" data-lang="bash" class="torchlight" style="background-color: #292D3E; --theme-selection-background: #7580B850;"><!-- Syntax highlighted by torchlight.dev --><div class="line"><span style="color: #BFC7D5;">php </span><span style="color: #BFC7D5;">artisan</span><span style="color: #BFC7D5;"> </span><span style="color: #BFC7D5;">queue:work</span><span style="color: #BFC7D5;"> </span><span style="color: #BFC7D5;">redis</span><span style="color: #BFC7D5;"> </span><span style="color: #82AAFF;">--queue=podcasts</span></div></code></pre>
-
-            <p>
-              For more visibility and control over your queues, <a
-                href="https://laravel.com/docs/horizon">Laravel Horizon</a
-              > provides a beautiful dashboard and code-driven configuration for
-              your Laravel-powered Redis queues.
-            </p>
-
-            <p><strong>Learn more</strong></p>
-            <ul>
-              <li><a href="https://laravel.com/docs/queues">Job Queues</a></li>
-              <li>
-                <a href="https://laravel.com/docs/horizon">Laravel Horizon</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <div x-init="tabs.push('scheduling')"></div>
-
-        <div
-          class="p-5 md:p-8 lg:px-12"
-          x-show="tab === 'scheduling'"
-          style="display: none;"
-        >
-          <h3 class="font-bold text-2xl">Task Scheduling</h3>
-          <div
-            class="mt-4 leading-relaxed [&_pre]:bg-[#161414] [&_pre_code.torchlight]:!bg-[#161414] [&_pre]:leading-8 [&_pre]:p-2 [&_a]:text-red-600 [&_a]:underline hover:[&_a]:no-underline [&_strong]:font-medium [&_ul]:list-disc [&_ul]:ml-4 space-y-4"
-          >
-            <p>
-              Schedule recurring jobs and commands with an expressive syntax and
-              say goodbye to complicated configuration files:
-            </p>
-
-            <pre><code data-theme="olaolu-palenight" data-lang="php" class="torchlight" style="background-color: #292D3E; --theme-selection-background: #7580B850;"><!-- Syntax highlighted by torchlight.dev --><div class="line"><span style="color: #BEC5D4;">$schedule</span><span style="color: #89DDFF;">-&gt;</span><span style="color: #82AAFF;">job</span><span style="color: #BFC7D5;">(</span><span style="color: #FFCB8B;">NotifySubscribers</span><span style="color: #89DDFF;">::</span><span style="color: #C792EA;">class</span><span style="color: #BFC7D5;">)</span><span style="color: #89DDFF;">-&gt;</span><span style="color: #82AAFF;">hourly</span><span style="color: #BFC7D5;">();</span></div></code></pre>
-
-            <p>
-              Laravel's scheduler can even handle multiple servers and offers
-              built-in overlap prevention:
-            </p>
-
-            <pre><code data-theme="olaolu-palenight" data-lang="php" class="torchlight" style="background-color: #292D3E; --theme-selection-background: #7580B850;"><!-- Syntax highlighted by torchlight.dev --><div class="line"><span style="color: #BEC5D4;">$schedule</span><span style="color: #89DDFF;">-&gt;</span><span style="color: #82AAFF;">job</span><span style="color: #BFC7D5;">(</span><span style="color: #FFCB8B;">NotifySubscribers</span><span style="color: #89DDFF;">::</span><span style="color: #C792EA;">class</span><span style="color: #BFC7D5;">)</span></div><div class="line"><span style="color: #BFC7D5;">    </span><span style="color: #89DDFF;">-&gt;</span><span style="color: #82AAFF;">dailyAt</span><span style="color: #BFC7D5;">(</span><span style="color: #D9F5DD;">'</span><span style="color: #C3E88D;">9:00</span><span style="color: #D9F5DD;">'</span><span style="color: #BFC7D5;">)</span></div><div class="line"><span style="color: #BFC7D5;">    </span><span style="color: #89DDFF;">-&gt;</span><span style="color: #82AAFF;">onOneServer</span><span style="color: #BFC7D5;">();</span></div><div class="line"><span style="color: #BFC7D5;">    </span><span style="color: #89DDFF;">-&gt;</span><span style="color: #82AAFF;">withoutOverlapping</span><span style="color: #BFC7D5;">();</span></div></code></pre>
-
-            <p><a href="https://laravel.com/docs/scheduling">Learn more</a></p>
-          </div>
-        </div>
+        
       </div>
     </div>
   </div>
