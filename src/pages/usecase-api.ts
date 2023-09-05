@@ -9,7 +9,7 @@ export const get: APIRoute = async function get() {
   try {
    return   new Response(JSON.stringify(projects), {
     status: 200,
-    headers: { 'content-type': `application/json` },
+    headers: { 'content-type': `application/json`, "access-control-allow-origin" : "*" },
   });
 
   } catch (error: unknown) {
