@@ -41,7 +41,7 @@ const { title } = Astro.props;
 
 
       <!-- Meta Pixel Code -->
-<script>
+<script type="text/partytown">
   !function(f,b,e,v,n,t,s)
   {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
   n.callMethod.apply(n,arguments):n.queue.push(arguments)};
@@ -59,6 +59,12 @@ const { title } = Astro.props;
 
   </head>
   <body class="overflow-hidden overflow-y-auto bg-auto">
+
+      <!-- Google Tag Manager (noscript) -->
+      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PVXDRPX"
+      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+      <!-- End Google Tag Manager (noscript) -->
+
     <Header />
     <slot />
     <Footer />
