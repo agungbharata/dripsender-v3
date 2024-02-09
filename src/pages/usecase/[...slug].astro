@@ -31,11 +31,11 @@ const { entry } = Astro.props;
 const { Content } = await entry.render();
 ---
 
-<section class="bg-slate-50 dark:bg-slate-900">
+
   <html lang="en">
     <head>
-      <!-- GoogleAnalytic Tag -->
-      <GoogleAnalytic />
+       <!-- GoogleAnalytic Tag -->
+      <GoogleAnalytic/>
       <meta charset="utf-8" />
       <meta name="viewport" content="width=device-width" />
       <meta name="generator" content={Astro.generator} />
@@ -46,7 +46,13 @@ const { Content } = await entry.render();
         rel="stylesheet"
       />
     </head>
-    <body class="overflow-hidden overflow-y-auto bg-auto">
+    <body class="overflow-hidden overflow-y-auto bg-autobg-slate-50 dark:bg-slate-900">
+
+      <!-- Google Tag Manager (noscript) -->
+      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PVXDRPX"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+      <!-- End Google Tag Manager (noscript) -->
+
       <Header />
 
       <meta property="og:url" content={Astro.url.href.replace("dripsender.id","www.dripsender.id")} />
@@ -64,7 +70,7 @@ const { Content } = await entry.render();
       <meta name="twitter:card" content="summary_large_image" />
 
       <!-- Meta Pixel Code -->
-<script>
+<script type="application/javascript">
   !function(f,b,e,v,n,t,s)
   {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
   n.callMethod.apply(n,arguments):n.queue.push(arguments)};
@@ -138,4 +144,3 @@ const { Content } = await entry.render();
       <Footer />
     </body>
   </html>
-</section>

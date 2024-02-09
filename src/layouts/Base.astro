@@ -26,6 +26,8 @@ const { title, category, url } = Astro.props;
 <html lang="en">
     <GoogleAnalytic/>
     <head>
+         <!-- GoogleAnalytic Tag -->
+         <GoogleAnalytic />
         <Meta
             title={title}
             description={`${title} in ${category ?? "Home"}`}
